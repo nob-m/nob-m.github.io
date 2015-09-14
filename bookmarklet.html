@@ -5,13 +5,21 @@
 javascript:(function(){
 	var d=window.document;
 	try{
-		var u='https://nob-m.github.io/bookmarklet/first.js?r='+Math.random();
+		var u='https://nob-m.github.io/';
+		var v='bookmarklet/first.js?r='+Math.random();
+		var s='\u8AAD\u8FBC\u306B\u5931\u6557\u3057\u307E\u3057\u305F\u3002\u4F5C\u8005\u306E\u30DA\u30FC\u30B8\u3092\u958B\u304D\u307E\u3059\u304B\uFF1F';
+		var f=function(){
+			if(confirm(s)){
+				d.location=u;
+			}
+		};
 		var i=d.createElement('script');
-		i.src=u;
+		i.src=u+v;
 		i.charset='utf-8';
+		i.onerror = f;
 		d.getElementsByTagName('head')[0].appendChild(i);
 	}catch(e){
-		alert(e);
+		f();
 	}
 })();
 </pre>
