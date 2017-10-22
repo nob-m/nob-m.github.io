@@ -9,7 +9,9 @@
 })();
 
 function receiveMessage(event) {
-	console.log(event.origin);
+	console.log('origin:' + event.origin);
+	console.log('source:' + event.source);
+	console.log('data:' + event.data);
 	console.log('test2');
 }
 
