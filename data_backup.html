@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test</title>
+<script>
+(function(){
+	console.log('test1');
+})();
+
+function receiveMessage(event) {
+	console.log(event.origin);
+	console.log('test2');
+}
+
+window.addEventListener('message', receiveMessage, false);
+</script>
+</head>
+<body>
+テスト用ページです。
+</body>
+</html>
