@@ -9,13 +9,14 @@
 	var receiveMessage = function(event) {
 		if(event.origin === 'chrome://browser'){
 			if(event.data.dev_name === 'scoreviewer24'){
-				console.log('data:', event.data);
 				if(event.data.data instanceof Array){
 					for(var i=0; i < event.data.data.length; i++){
 						var obj = event.data.data[i];
 						console.log('data:', obj);
 						localforage.setItem(obj.name, obj.data).then(function (value) {
-							console.log(value);
+							console.log('finish:', value);
+						}).catch(function(err) {
+							console.log('error', err);
 						});
 					}
 				}
