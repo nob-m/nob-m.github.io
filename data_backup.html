@@ -19,13 +19,7 @@
 							console.log('error', err);
 						});
 					}
-					
-					var test = new Date();
-					localforage.setItem('test', test.getHours() + ':' + test.getMinutes() + ':' + test.getSeconds()).then(function (value) {
-						console.log('finish:', value);
-					}).catch(function(err) {
-						console.log('error', err);
-					});
+
 				}
 			}
 		}
